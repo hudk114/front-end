@@ -46,3 +46,19 @@ function outter() {
 arr[3] // 10
 
 // 模块
+var module = function createModule() {
+  var privateProperty = 0 // 静态私有变量
+  var privateFunc = function privateFunc(params) {
+    console.log('1')
+    return true
+  }
+
+  var obj = new Base() // 保证返回的module一定是Base的实例
+  obj.publicProperty = 1
+  obj.publicFunc = function publicFunc() {
+    privateProperty ++
+    return privateFunc()
+  }
+
+  return obj
+} ()

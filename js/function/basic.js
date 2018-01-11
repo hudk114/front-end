@@ -21,3 +21,13 @@ var test1 = function () {
 /** arguments
  *  @link http://blog.csdn.net/qaserfvvbbert/article/details/52354468
  */
+// 按值传递，引用传递的是引用的值
+function set(obj) {
+  obj = {} // obj的引用被重新赋值，离开运行范围后被销毁
+  obj.a = 3
+}
+var a = {
+  a: 1
+}
+set(a)
+a.a // 1
