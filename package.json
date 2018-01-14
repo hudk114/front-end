@@ -1,0 +1,27 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "front-end learning and summary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write ./js/*.js ./js/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hudk114/front-end.git"
+  },
+  "keywords": [
+    "learning",
+    "front-end"
+  ],
+  "author": "hudk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hudk114/front-end/issues"
+  },
+  "homepage": "https://github.com/hudk114/front-end#readme",
+  "devDependencies": {
+    "prettier": "^1.10.2"
+  }
+}
