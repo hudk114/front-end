@@ -100,11 +100,11 @@ b.call();
 
 // 例外
 function f() {
-  console.log(this)
+  console.log(this);
 }
 var f1 = f.bind(null);
 var f2 = f.bind();
-f1() // window
-f2() // window
-f.apply() // window
-f.call(null) // window
+f1(); // window
+f2(); // window
+f.apply(); // window
+f.call(null); // window
