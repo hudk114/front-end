@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="iframe-type"></div>
+  <iframe id="test" src="http://localhost:3001/post-message" frameborder="0"></iframe>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.origin !== 'http://localhost:3001') {
+        return;
+      }
+      console.log(event.data);
+    });
+
+    window.onload = function() {
+      var iframe = document.getElementById('test');
+      iframe.contentWindow.postMessage('', 'http://localhost:3001');
+    };
+  </script>
+</body>
+</html>

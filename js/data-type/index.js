@@ -38,8 +38,8 @@ fixedEqual(0.1 + 0.2, 0.3); // ture
 // .优先级比运算高
 42.toFixed(2); // SyntaxError: Invalid or unexpected token
 42..toFixed(2); // 42.00
-// 整数可以达到2^53 - 1， 但是位运算只能达到2^32
-var n = Math.pow(2, 53); // TODO why 在chrome中实际上可以达到。。。
+// 整数可以安全达到2^53 - 1， 但是位运算只能达到2^32
+var n = Math.pow(2, 53); // 实际上可以运算 https://www.zhihu.com/question/29010688
 n >> 2; // 0
 
 // string
