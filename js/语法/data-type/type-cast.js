@@ -2,7 +2,7 @@
  * type-casting
  * @author hudk
  * @link http://www.ecma-international.org/ecma-262/5.1/index.html#sec-9
- * @link 
+ * @link
  */
 
 // 除了用户在定义编写时候强制修改类型外，js运行时会根据需要默认修改数据类型
@@ -12,10 +12,9 @@
 
 // toString
 
-
 // toNumber http://www.ecma-international.org/ecma-262/5.1/index.html#sec-9.3
 
-// toBoolean 
+// toBoolean
 // falsy object
 if (document.all) {
   console.log(0);

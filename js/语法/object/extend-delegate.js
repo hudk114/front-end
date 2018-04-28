@@ -5,7 +5,7 @@
  */
 
 var Base = {
-  baseFunc: function () {
+  baseFunc: function() {
     console.log(this);
   }
 };

@@ -3,35 +3,30 @@ function then(...rest) {
   return Promise.resolve().then(...rest);
 }
 
-
-(new Promise((resolve, reject) => {
+new Promise((resolve, reject) => {
   resolve(1);
   reject(2);
   console.log(3);
-}))
+})
   .then(val => console.log(val))
   .catch(e => console.log(e));
 // 3
 // 1
-
 
 then(_ => console.log(4));
 console.log(5);
 // 5
 // 4
 
-
 var p = then(_ => {
   return p;
 }); // TypeError: Chaining cycle detected for promise #<Promise>
-
 
 var p = new Promise(_ => {}, _ => {});
 var p1 = then(_ => {
   return p;
 });
 p1 === p; // false
-
 
 var obj1 = {};
 then(_ => obj1).then(_ => console.log(_)); // Error: then is not defined

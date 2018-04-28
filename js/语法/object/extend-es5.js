@@ -16,27 +16,26 @@ var extend = function extend(source, target) {
 };
 
 // 寄生继承
-function Sup () {
+function Sup() {
   this.property = 1;
 }
-Sup.prototype.func1 = function () {
-  console.log(this.property)
-}
+Sup.prototype.func1 = function() {
+  console.log(this.property);
+};
 function Sub() {
   var sub = new Sup();
   var inner = sub.func1;
 
-  sub.func1 = function () {
+  sub.func1 = function() {
     inner.call(this);
     console.log('sub func1');
-  }
+  };
   return sub;
 }
 var s = new Sub();
 s.func1(); // 1 sub func1
 // s lose Type!
 s instanceof Sub; // false
-
 
 var Animal = function Animal(name) {
   this.name = name;
@@ -61,11 +60,11 @@ Cat.prototype.run = function() {
 };
 
 // pollyfill for before es5， 返回的其实是o的原型的一个副本，不会返回o的实例属性与方法，因而使得继承的原型链上不会有o的实例属性与方法
-Object.create = function (o) {
+Object.create = function(o) {
   function F() {}
-  F.prototype = o
-  return new F()
-}
+  F.prototype = o;
+  return new F();
+};
 
 // 寄生组合式继承
 var inherit = function inherit(sub, sup) {

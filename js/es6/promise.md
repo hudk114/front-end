@@ -22,17 +22,17 @@ ECMA的规范遵循Promises/A+，但包含一些不在规范中的方法，不�
 
 2. [then](https://promisesaplus.com/#the-then-method)
     * then方法是规范中定义的唯一方法，具体看规范即可
-    * then方法中的两个回掉参数都需要等当前的execution context执行完后在执行（加入到microtash队列中）[test.js](https://github.com/hudk114/front-end/blob/master/js/promise/test.js) line 18
+    * then方法中的两个回掉参数都需要等当前的execution context执行完后在执行（加入到microtash队列中）[test.js](https://github.com/hudk114/front-end/blob/master/js/es6/promise.js) line 16
     * then方法返回的依然是一个Promise，除非then方法没有指定相应的处理函数或者抛出异常，否则这个Promise会经历一个Promise解决过程([[Resolve]] (promise, value))
 
 3. [[[Resolve]] (promise, value)](https://promisesaplus.com/#the-promise-resolution-procedure)
     * promise === value 抛异常(因为会链式调用)
     * 若value是一个Promise，则promise采用value的状态（但promise !== value)，且状态会随之改变
     * 若value是一个对象或方法，这段很绕
-        * 如果value不是一个thenable(不是一个thenable对象或者方法)，抛出异常 [test.js](https://github.com/hudk114/front-end/blob/master/js/promise/test.js) line 36
-        * 如果value是thenable，调用value.then()，方法同then [test.js](https://github.com/hudk114/front-end/blob/master/js/promise/test.js) line 39 53
-        * 如果value.then抛出异常，调用promise的reject(error) [test.js](https://github.com/hudk114/front-end/blob/master/js/promise/test.js) line 46
-    * 若value不是对象或方法，调用promise的resolve方法，参数为value，见[test.js](https://github.com/hudk114/front-end/blob/master/js/promise/test.js) line 64
+        * 如果value不是一个thenable(不是一个thenable对象或者方法)，抛出异常 [test.js](https://github.com/hudk114/front-end/blob/master/js/es6/promise.js) line 31
+        * 如果value是thenable，调用value.then()，方法同then [test.js](https://github.com/hudk114/front-end/blob/master/js/es6/promise.js) line 34 48
+        * 如果value.then抛出异常，调用promise的reject(error) [test.js](https://github.com/hudk114/front-end/blob/master/js/es6/promise.js) line 41
+    * 若value不是对象或方法，调用promise的resolve方法，参数为value，见[test.js](https://github.com/hudk114/front-end/blob/master/js/es6/promise.js) line 59
 
 ## [api](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 * Promise
