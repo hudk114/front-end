@@ -4,7 +4,9 @@
   "description": "front-end learning and summary",
   "main": "index.js",
   "scripts": {
-    "prettier": "prettier --write ./js/*.js ./js/**/*.js"
+    "prettier": "prettier --write ./js/**/*.js",
+    "linter": "eslint ./js/**/*.js",
+    "format": "prettier-eslint --write ./js/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,14 @@
   },
   "homepage": "https://github.com/hudk114/front-end#readme",
   "devDependencies": {
-    "prettier": "^1.10.2"
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "prettier": "^1.12.1",
+    "prettier-eslint": "^8.8.1",
+    "prettier-eslint-cli": "^4.7.1"
   }
 }
