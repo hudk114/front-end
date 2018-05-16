@@ -6,7 +6,8 @@
   "scripts": {
     "prettier": "prettier --write ./js/**/*.js",
     "linter": "eslint ./js/**/*.js",
-    "format": "prettier-eslint --write ./js/**/*.js"
+    "format": "prettier-eslint --write ./js/**/*.js",
+    "start": "node demo-server/app.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,8 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.1.0",
+    "express": "^4.16.3",
+    "opn": "^5.3.0",
     "prettier": "^1.12.1",
     "prettier-eslint": "^8.8.1",
     "prettier-eslint-cli": "^4.7.1"
