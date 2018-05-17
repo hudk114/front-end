@@ -19,7 +19,7 @@ devServer: {
   ...
 }
 ```
-当mock数据多的时候，将内部路由抽离出去即可，相当于自己写了一个express对路由中间层
+当mock数据多的时候，将内部路由抽离出去即可，相当于自己写了一个express对路由中间层
 
 * 优点：最简单，不需要起额外的服务；源代码不需要修改，不会引入不小心带入的错误；对路由的控制更精确，可以精确控制哪些接口需要mock
 * 缺点：每次修改了mock数据主项目都需要重新run一遍，项目大的时候编译代价很高
@@ -59,9 +59,11 @@ function request (options, mock) {
 例如[Mock](https://github.com/nuysoft/Mock)库，拦截了所有的ajax请求并通过自己定义的xhr返回数据，当然这个库有些问题，具体就不细展开了
 
 # 实践方案
-在实践中，针对几种mock方式对优缺点将其整合了一下。制定的解决方案是采用 `mock服务器 + devServer proxy` 与 `前端控制` 的方法，这种方式下，需要重新启动的只有mock服务器，主项目只需要在代码中进行热更新，所以每次修改成本并不高
+在实践中，针对几种mock方式对优缺点将其整合了一下。制定的解决方案是采用 `mock服务器 + devServer proxy` 与 `前端控制` 的方法
 
-前端的实现在 [mock](https://github.com/hudk114/mock/tree/master) ，通过 `process.env.NODE_ENV` 的配置，只会在生产环境采用mock，即使开发忘记对代码进行修改，无意带到了线上也不会造成影响
+实现在 [mock](https://github.com/hudk114/mock/tree/master) ，通过 `process.env.NODE_ENV` 的配置，只会在生产环境采用mock，即使开发忘记对代码进行修改，无意带到了线上也不会造成影响
+
+后端采用了node express服务器，demo写在 [mock服务器](https://github.com/hudk114/front-end/blob/master/config/mock-server)， 通过动态require与缓存更新，可以实现不需要重新启动服务器就能实现mock数据的修改
 
 # TODO
 前文提到的[Mock](https://github.com/nuysoft/Mock)库有些问题，提了issue也没有人更新，但是这种思想感觉很棒，可以在后续尝试一下
