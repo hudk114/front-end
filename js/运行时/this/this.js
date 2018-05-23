@@ -2,7 +2,6 @@
  * this of function
  * @author hudk
  * @link https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this
- * @link http://blog.csdn.net/qaserfvvbbert/article/details/52385699
  */
 
 // 函数简单调用下绑定到全局
