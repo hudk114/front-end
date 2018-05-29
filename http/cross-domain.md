@@ -29,6 +29,8 @@ GET, HEADER, POST请求。首部除了Accept, Accept-Language, Content-Language,
 
 其次， `Access-Control-Allow-Credentials` 必须被设为 `true`
 
+**需要注意带是，OPTIONS请求是不会带cookie的，因此后端在OPTIONS里不能通过cookie来判断权限，而是要在之后的请求里判断**
+
 # [jsonp](https://github.com/hudk114/cross-domain-test/blob/master/jsonp)
 ## 原理
 采用动态script，利用script可以请求跨域脚本的方式来跨域，只能实现GET方法
