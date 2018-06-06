@@ -23,7 +23,7 @@ ECMA的规范遵循Promises/A+，但包含一些不在规范中的方法，不�
 2. [then](https://promisesaplus.com/#the-then-method)
     * then方法是规范中定义的唯一方法，具体看规范即可
     * then方法中的两个回掉参数都需要等当前的execution context执行完后在执行（加入到microtash队列中）[test.js](https://github.com/hudk114/front-end/blob/master/js/es6/promise.js) line 16
-    * then方法返回的依然是一个Promise，除非then方法没有指定相应的处理函数或者抛出异常，否则这个Promise会经历一个Promise解决过程([[Resolve]] (promise, value))
+    * then方法返回的依然是一个Promise，除非then方法没有指定相应的处理函数或者抛出异常，否则这个Promise会经历一个Promise解决过程([[Resolve]] (promise, value)) *其中promise是返回的promise,value是onFulfilled或onReject返回的值*
 
 3. [[[Resolve]] (promise, value)](https://promisesaplus.com/#the-promise-resolution-procedure)
     * promise === value 抛异常(因为会链式调用)

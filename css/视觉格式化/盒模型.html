@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>box</title>
+  <link rel="stylesheet" href="./盒模型.css">
+  <style>
+    .test {
+      width: 200px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  </style>
+</head>
+<body>
+  <ol>
+    <li>
+      <b>margin</b>
+      <div class="other">pre</div>
+      <div class="content test">测试测试测试</div>
+      <div class="other">end</div>
+      <pre></pre>
+    </li>
+    <li>
+      <b></b>
+      <div style="height: auto; border: 1px solid; background: silver;">
+        <p style="margin: 2em 0;">wafsfas</p>
+      </div>
+    </li>
+  </ol>
+  <ol>
+    <b>定位</b>
+    <li>
+      <b>浮动</b>
+      <div style="overflow: hidden; height: 300px;" class="blue">
+        <div style="margin: 30px; height: 100px;" class="red">
+
+        </div>
+        <div style="margin: 30px; height: 100px;" class="yellow">
+          <div style="float: left;">123123123</div>
+        </div>
+      </div>
+    </li>
+    <li>
+        <b>绝对定位</b>
+        <div style="position: relative; height: 300px;" class="blue">
+          <div style="margin: 30px; position: absolute; left: 20px; top: 10px;" class="yellow">
+            123
+          </div>
+        </div>
+      </li>
+  </ol>
+</body>
+</html>

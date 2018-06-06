@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vertical-middle</title>
+</head>
+<body>
+  <ol>
+    <div class="block yellow" style="width: 100%; height: 300px;">
+      <div class="centered blue" style="width: 100px; height: 100px;">123</div>
+    </div>
+  </ol>
+
+
+  <style>
+    .yellow {
+      background-color: lightgoldenrodyellow;
+    }
+
+    .blue {
+      background-color: lightblue;
+    }
+
+    .red {
+      background-color: lightcoral;
+    }
+
+    .block {
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .block::before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em;
+    }
+
+    .centered {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+</body>
+</html>

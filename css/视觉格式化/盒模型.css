@@ -1,0 +1,24 @@
+.parent {
+  background-color: lavender;
+}
+
+.content {
+  background-color: aquamarine;
+  border-color: crimson; 
+}
+
+.other {
+  background-color: aliceblue;
+}
+
+.blue {
+  background-color: lightblue;
+}
+
+.yellow {
+  background-color: lightyellow;
+}
+
+.red {
+  background-color: lightcoral;
+}
